@@ -26,8 +26,6 @@ sudo apt-get install qemu
 sudo ln -s /usr/bin/qemu-system-i386 /usr/bin/qemu
 ```
 
-![install QUME](C:\Users\llc\Pictures\TIM截图20190310144401.png)
-
 3.下载并编译mykernel内核
 
 ```
@@ -41,6 +39,8 @@ make allnoconfig
 make
 ```
 
+![编译](https://github.com/llc1024/linux.github.io/blob/master/TIM%E6%88%AA%E5%9B%BE20190310144401.png)
+
 4.使用QUME启动内核
 
 ```
@@ -49,6 +49,8 @@ qemu -kernel arch/x86/boot/bzImage
 
 从qemu窗口中我们可以看到my_start_kernel在执行，同时my_timer_handler时钟中断处理程序周期性执行。
 所以想要实现时间片轮转程序就应当修改这两个函数。
+
+![启动内核](https://github.com/llc1024/linux.github.io/blob/master/TIM%E5%9B%BE%E7%89%8720190310145653.png)
 
 5.修改mykernel内核代码，完成简单的时间片轮转多道程序内核代码
 
@@ -293,5 +295,9 @@ void all_task_print(void)
 }
 ```
 myinterrupt.c实现了时间片轮转切换进程。
+
+6.实验结果
+
+![结果](https://github.com/llc1024/linux.github.io/blob/master/TIM%E6%88%AA%E5%9B%BE20190310154028.png)
 
 ### 实验总结
