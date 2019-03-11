@@ -13,25 +13,17 @@ Ubuntu 64位系统
 
 ## 实验步骤
 
-
-
+1.在安装QUME前先要更新系统
 
 ```markdown
-Syntax highlighted code block
+sudo apt-get update
+```
 
-# Header 1
-## Header 2
-### Header 3
+2.更新之后安装QUME
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+sudo apt-get install qemu
+sudo ln -s /usr/bin/qemu-system-i386 /usr/bin/qemu
 ```
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
