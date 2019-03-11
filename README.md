@@ -26,6 +26,8 @@ sudo apt-get install qemu
 sudo ln -s /usr/bin/qemu-system-i386 /usr/bin/qemu
 ```
 
+![install QUME](C:\Users\llc\Pictures\TIM截图20190310144401.png)
+
 3.下载并编译mykernel内核
 
 ```
@@ -291,3 +293,5 @@ void all_task_print(void)
 }
 ```
 myinterrupt.c实现了时间片轮转切换进程。
+
+### 实验总结
