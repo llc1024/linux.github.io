@@ -1,12 +1,20 @@
-## Welcome to GitHub Pages
+# linux内核工作原理
 
-You can use the [editor on GitHub](https://github.com/llc1024/linux.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+学号241，姓名刘乐成，原创作品转载请注明出处 + [https://github.com/mengning/linuxkernel/](https://github.com/mengning/linuxkernel/)。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 实验环境
 
-### Markdown
+VMware Workstation 14 Player虚拟机
+Ubuntu 64位系统
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## 实验目的
+
+完成一个简单的时间片轮转多道程序内核代码，参考代码见[mykernel版本库](https://github.com/mengning/mykernel)。
+
+## 实验步骤
+
+
+
 
 ```markdown
 Syntax highlighted code block
