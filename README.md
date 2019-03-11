@@ -47,10 +47,10 @@ make
 qemu -kernel arch/x86/boot/bzImage
 ```
 
+![启动内核](https://github.com/llc1024/linux.github.io/blob/master/TIM%E5%9B%BE%E7%89%8720190310145653.png)
+
 从qemu窗口中我们可以看到my_start_kernel在执行，同时my_timer_handler时钟中断处理程序周期性执行。
 所以想要实现时间片轮转程序就应当修改这两个函数。
-
-![启动内核](https://github.com/llc1024/linux.github.io/blob/master/TIM%E5%9B%BE%E7%89%8720190310145653.png)
 
 5.修改mykernel内核代码，完成简单的时间片轮转多道程序内核代码
 
@@ -166,7 +166,7 @@ unsigned long get_rand(max)
 	return a;
 }
 ```
-main.c首先生成了10个PCB表，并为他们生成了随机的优先级，最后使用汇编语言实现了现场保护，保存了当前进程的ip和sp。
+main.c首先生成了10个PCB表，并为他们生成了随机的优先级，最后使用汇编语言实现了现场保护，保存了当前进程的栈顶指针与指令寄存器数据。
 
 最后是myinterrupt.c
 ```
@@ -301,3 +301,4 @@ myinterrupt.c实现了时间片轮转切换进程。
 ![结果](https://github.com/llc1024/linux.github.io/blob/master/TIM%E6%88%AA%E5%9B%BE20190310154028.png)
 
 ### 实验总结
+操作系统是如何工作的？ 操作系统是连接软硬件的桥梁，一方面它管理硬件资源（配置内存，控制输入输出设备，操作网络与文件系统），最大限度地发挥计算机资源；另一方面，他负责进程调度和作业管理，为软件运行提供库支持，屏蔽硬件的不同。通过中断对外界做出反映，通过进程切换使CPU时间合理分配，保证计算机的性能发挥。
